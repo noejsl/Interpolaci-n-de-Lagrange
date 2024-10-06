@@ -1,6 +1,6 @@
 // Variables globales para almacenar matrices y resultados
-let inputs = [];
-let Yinputs = []
+let inputs = []; //contiene los pares ordenados x y y
+let Yinputs = [] //contienen los valores de x a evaluar
 
 // Referencias a elementos del DOM
 let divEc = document.getElementById('ecuaciones');
@@ -63,6 +63,8 @@ function crearEc() {
 
     let contY = 1;  // Contador para los inputs de Y (inicia en 1 por el campo por defecto)
 
+
+    //Funcion para poder ingresar un nuevo valor de x a evaluar
     buttonadd.onclick = function() {
         let newYInput = document.createElement('input');
         newYInput.type = 'number';
@@ -73,7 +75,7 @@ function crearEc() {
     };
 
 
-    button.onclick = function() { saveIndex(n, contY); };
+    button.onclick = function() { saveIndex(n, contY); };//Pasamos como parametro a la función Solve n y ContY
     divEc.appendChild(button);
 }
 
@@ -150,7 +152,7 @@ function saveIndex(n, contY) {
     let btnSolve = document.createElement('button');
     btnSolve.type = 'button';
     btnSolve.textContent = 'Resolver';
-    btnSolve.onclick =  function() { solve(n, contY); }; ;
+    btnSolve.onclick =  function() { solve(n, contY); }; //Pasamos como parametro n y contY a la funcion Solve
 
     seeMat.appendChild(btnSolve);
 }
@@ -224,7 +226,7 @@ function solveY(x, n) {
             }
         }
 
-        result += termino * inputsY[i]; // Sumar el término multiplicado por Y
+        result += termino * inputsY[i]; // Sumar el término multiplicado por Y en la posicion i
     }
 
     return result;
