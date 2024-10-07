@@ -10,9 +10,16 @@ mtable {
     display: inline-table;
     border-left: 2px solid #d9d5e2;
     border-right: 2px solid #d9d5e2;
-    border-collapse: collapse;
+    border-top: 2px solid #d9d5e2; /* Borde superior */
+    border-bottom: 2px solid #d9d5e2; /* Borde inferior */
+    border-collapse: collapse; /* Hace que los bordes colapsen entre celdas */
     margin: 0.5em 0;
     color: #d9d5e2;
+}
+
+mtable td, mtable th {
+    border: 2px solid #d9d5e2; /* Bordes internos visibles */
+    padding: 0.5em;
 }
 
 mtr {
@@ -33,10 +40,9 @@ mtd {
     width: auto;
 }
 
-.seeMat span{
+.seeMat span {
     color: white;
 }
-
 
 /* Estilos para las filas de la matriz */
 mrow {
@@ -50,12 +56,12 @@ h2, h3, h4 {
     color: #9788db;
 }
 
-h1{
+h1 {
     margin: 0.5em 0;
     text-align: center;
     color: #8400ff;
     font-size: 2em;
-    font-family: 'Times New Roman', Times, serif
+    font-family: 'Times New Roman', Times, serif;
 }
 
 /* Estilos para el contenedor principal */
@@ -68,13 +74,6 @@ h1{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: #e0e0e0fb;
     font-family: sans-serif;
-
-    #ecuaciones {
-        input[type="number"] {
-            width: 75px;
-            
-        }
-    }
 }
 
 /* Estilos para los botones */
@@ -104,14 +103,14 @@ input[type="number"] {
     border: 1px solid #3d1d88;
     border-radius: 5px;
     text-align: center;
-    width: 60px
+    width: 60px;
 }
 
 /* Estilos para las soluciones */
-#solution, #answers {
+#solution {
     margin-top: 20px;
     text-align: center;
-    color: #3d1d88;
+    color: white;
 }
 
 /* Estilos responsivos */

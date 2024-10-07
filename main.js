@@ -193,6 +193,7 @@ function solve(n, contY) {
     textSolution.textContent = 'Soluciones: '
     solution.appendChild(textSolution);
     solution.appendChild( document.createElement('br'));
+    solution.appendChild(document.createElement('br'));
 
     //Calculo de y(x) para cada elemento de Yinputs
     for  (let i = 0; i < contY; i++){
@@ -205,7 +206,7 @@ function solve(n, contY) {
         //Mostrar solucion
         solution.appendChild(Yresult)
         solution.appendChild(document.createElement('br'));
-
+        solution.appendChild(document.createElement('br'));
     }
 
 }
