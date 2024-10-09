@@ -142,7 +142,7 @@ function saveIndex(n, contY) {
     //Mostrar los valores de Y a resolver
     for (let i = 0; i <  contY; i++){
         Ylabel =document.createElement('span');
-        Ylabel.textContent = `y (${Yinputs[i]})= ?`
+        Ylabel.textContent = `y (${Yinputs[i]}) = ?`
         seeMat.appendChild(Ylabel)
         seeMat.appendChild(document.createElement('br'))
     }
@@ -174,10 +174,10 @@ function solve(n, contY) {
     //Limpiamos el contenedor por si hubo problemas anteriores
     solution.innerHTML = '';
 
+    seeMat.appendChild(document.createElement('br'));
     textFormula = document.createElement('span');
     textFormula.textContent = 'Formula de Lagrange: '
     seeMat.appendChild(textFormula);
-    seeMat.appendChild( document.createElement('br'));
 
 
     const yformula = formuladisplay(n); // Obtenemos la fórmula en codigo LaTeX
@@ -189,7 +189,9 @@ function solve(n, contY) {
     MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 
 
+    solution.appendChild( document.createElement('br'));
     textSolution = document.createElement('span');
+    textSolution.className = 'result'
     textSolution.textContent = 'Soluciones: '
     solution.appendChild(textSolution);
     solution.appendChild( document.createElement('br'));
@@ -201,6 +203,7 @@ function solve(n, contY) {
         console.log('Resultados X y Y', Yinputs[i], resultY);
 
         let Yresult = document.createElement('span');
+        Yresult.className = 'result';
         Yresult.textContent = `y (${Yinputs[i]}) = ${resultY}`;
         
         //Mostrar solucion
